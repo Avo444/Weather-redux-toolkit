@@ -1,70 +1,149 @@
-# Getting Started with Create React App
+# Weather Forecast App (Redux Toolkit)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple weather forecast application built with **React** and **Redux Toolkit**.
+The app displays weather information for the next **6 days** using the
+**OpenWeatherMap API**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 6-day weather forecast
+- Data fetched from OpenWeatherMap API
+- State management with Redux Toolkit
+- API requests handled with Axios
+- Loading states with skeleton loaders
+- Responsive UI
+- Modern React setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🌤️ Weather API
 
-### `npm test`
+This project uses the **OpenWeatherMap API** to retrieve weather forecast data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Website: https://openweathermap.org/
+- Forecast type: Daily / multi-day forecast
+- Data includes temperature, weather conditions, and icons
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React 19
+- Redux Toolkit
+- React Redux
+- Axios
+- Sass (SCSS)
+- React Loading Skeleton
+- Create React App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📦 Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Main libraries used in this project:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- @reduxjs/toolkit
+- react-redux
+- axios
+- react
+- react-dom
+- sass
+- react-loading-skeleton
+- dotenv
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📂 Project Structure (Example)
 
-## Learn More
+weather-redux-toolkit/
+├── public/
+├── src/
+│ ├── api/
+│ │ └── axios.js
+│ ├── components/
+│ │ ├── futures/
+│ │ │ ├── Navbar/
+│ │ │ ├── NextDaysList/
+│ │ │ ├── SearchForm/
+│ │ │ ├── TempChanger/
+│ │ │ ├── TodayContent/
+│ │ │ ├── TodayList/
+│ │ │ └── WeatherContent/
+│ │ └── shared/
+│ │ ├── NextDaysListItem/
+│ │ └── TodayListItem/
+│ ├── helper/
+│ │ └── weather.js
+│ ├── hooks/
+│ │ └── useWeather.jsx
+│ ├── pages/
+│ ├── store/
+│ │ ├── slices/
+│ │ │ └── weatherSlice/
+│ │ │ ├── api.js
+│ │ │ └── weatherSlice.js
+│ │ └── store.js
+│ ├── App.jsx
+│ ├── App.scss
+│ └── index.js
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ⚙️ Installation
 
-### Code Splitting
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+git clone https://github.com/Avo444/Weather-redux-toolkit.git
+```
 
-### Analyzing the Bundle Size
+2. Go to the project directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+cd Weather-redux-toolkit
+```
 
-### Making a Progressive Web App
+3. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm install
+```
 
-### Advanced Configuration
+## 🔑 Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Create a .env file in the root directory and add your OpenWeatherMap API key:
 
-### Deployment
+```env
+REACT_APP_API_KEY=your_api_key_here
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## ▶️ Running the App
 
-### `npm run build` fails to minify
+Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm start
+```
+
+Open your browser:
+[http://localhost:3000](http://localhost:3000)
+
+## 📦 Build
+
+```bash
+npm run build
+```
+
+### 📌 Notes
+
+- Ensure your OpenWeatherMap API plan supports multi-day forecasts.
+
+- Redux Toolkit is used for scalable and clean state management.
+
+- Custom hooks and helpers keep the codebase modular and readable.

@@ -1,0 +1,12 @@
+.searchForm {
+    margin: auto;
+    input {
+        padding: 5px;
+        outline: none;
+        border: none;
+        
+        &[type="submit"] {
+            cursor: pointer;
+        }
+    }
+}
