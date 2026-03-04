@@ -1,16 +1,29 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
     getCurrentData,
+    getWeatherError,
     getWeatherLoader,
+    setWeatherError,
 } from "../../../store/slices/weatherSlice/weatherSlice";
-import SkeletonContent from "./SkeletonContent";
 import useWeather from "../../../hooks/useWeather";
-
+import useNotification from "../../../hooks/useNotification";
+import SkeletonContent from "./SkeletonContent";
 import styles from "./index.module.scss";
+
 const TodayContent = () => {
     const { currentData, formatingTemp } = useWeather();
     const loader = useSelector(getWeatherLoader);
     const city = useSelector(getCurrentData);
+    const error = useSelector(getWeatherError);
+    const notification = useNotification();
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (error) {
+            notification(error, "error");
+            dispatch(setWeatherError(null))
+        }
+    }, [error]);
     return (
         <>
             {!loader ? (

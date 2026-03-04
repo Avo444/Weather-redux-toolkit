@@ -22,12 +22,16 @@ const weatherSlice = createSlice({
         setCurrentDay: (state, data) => {
             state.currentDay = data.payload;
         },
+        setWeatherError: (state, data) => {
+            state.error = data.payload;
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(getDailyWeatherData.pending, (state) => {
             state.loader = true;
         });
         builder.addCase(getDailyWeatherData.fulfilled, (state, action) => {
+            state.error = null;
             state.loader = false;
             state.currentData = action.payload.city;
             state.dailyData = sortWeatherList(action.payload.list);
@@ -35,7 +39,7 @@ const weatherSlice = createSlice({
 
         builder.addCase(getDailyWeatherData.rejected, (state, action) => {
             state.loader = false;
-            state.error = action.payload;
+            state.error = action.error.message;
         });
     },
     selectors: {
@@ -49,7 +53,7 @@ const weatherSlice = createSlice({
 });
 
 export const weatherReducer = weatherSlice.reducer;
-export const { setCurrentTemp, setCurrentDay } = weatherSlice.actions;
+export const { setCurrentTemp, setCurrentDay, setWeatherError } = weatherSlice.actions;
 export const {
     getCurrentData,
     getCurrentTemp,
