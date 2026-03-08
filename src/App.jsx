@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastify";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { setCurrentDay } from "./store/slices/weatherSlice/weatherSlice";
 import { getDailyWeatherData } from "./store/slices/weatherSlice/api";
 
 import Home from "./pages/Home";
 import "./App.scss";
-import { ToastContainer } from "react-toastify";
 
 function App() {
     const dispatch = useDispatch();

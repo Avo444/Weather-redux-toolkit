@@ -1,7 +1,7 @@
 export const sortWeatherList = (list) => {
     return list.reduce((acc, data) => {
-        const dateSplit = data.dt_txt.split(" ");
         const [date, time] = dateSplit;
+        const dateSplit = data.dt_txt.split(" ");
         const formatedDate = date.slice(5)
         if (!acc[formatedDate]) {
             acc[formatedDate] = [];

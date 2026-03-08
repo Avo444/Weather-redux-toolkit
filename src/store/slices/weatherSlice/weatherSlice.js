@@ -1,6 +1,6 @@
+import { sortWeatherList } from "../../../helper/weather";
 import { createSlice } from "@reduxjs/toolkit";
 import { getDailyWeatherData } from "./api";
-import { sortWeatherList } from "../../../helper/weather";
 
 const weatherSlice = createSlice({
     name: "weather",
@@ -52,8 +52,8 @@ const weatherSlice = createSlice({
     },
 });
 
-export const weatherReducer = weatherSlice.reducer;
 export const { setCurrentTemp, setCurrentDay, setWeatherError } = weatherSlice.actions;
+export const weatherReducer = weatherSlice.reducer;
 export const {
     getCurrentData,
     getCurrentTemp,
