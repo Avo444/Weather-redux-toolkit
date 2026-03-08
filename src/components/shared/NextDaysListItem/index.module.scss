@@ -1,0 +1,29 @@
+.item {
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.558);
+    cursor: pointer;
+    transition: all .3s;
+    .date {
+        font-size: 16px;
+    }
+    .row {
+        display: flex;
+        align-items: center;
+        .temp {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        img {
+            width: 50px;
+        }
+    }
+
+     &.active, &:hover {
+        box-shadow: 0 0 15px #00000076;
+    }
+}

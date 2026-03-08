@@ -1,0 +1,14 @@
+.changerForm {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    gap: 5px;
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+    }
+}
